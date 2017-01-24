@@ -1,16 +1,15 @@
 package com.seogchan.superman.myauto;
 
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by superman on 2017. 1. 24..
@@ -18,37 +17,42 @@ import java.util.Calendar;
 
 public class FuelInfoActivity extends AppCompatActivity {
 
-    EditText date;
+    EditText fuelDate;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_fuelinfo);
 
-        date = (EditText)findViewById(R.id.fuelDate);
+        fuelDate = (EditText)findViewById(R.id.fuelDate);
+
+
+        // 현재날짜 세팅
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault());
+        String strDate = dateFormat.format(new Date());
+        fuelDate.setText(strDate);
     }
 
+
+    /*
+    ** 날짜 입력
+    */
     public void showDatePickerDialog(View v) {
-        DialogFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), "datePicker");
+        int year, month, day;
+        Calendar calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH);
+        day= calendar.get(Calendar.DAY_OF_MONTH);
+
+        new DatePickerDialog(this, dateSetListener, year, month, day).show();
     }
 
-    public static class DatePickerFragment extends DialogFragment
-            implements DatePickerDialog.OnDateSetListener {
-
+    private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
         @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            // Use the current date as the default date in the picker
-            final Calendar c = Calendar.getInstance();
-            int year = c.get(Calendar.YEAR);
-            int month = c.get(Calendar.MONTH);
-            int day = c.get(Calendar.DAY_OF_MONTH);
-
-            // Create a new instance of DatePickerDialog and return it
-            return new DatePickerDialog(getActivity(), this, year, month, day);
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            String strDate = String.format("%d-%d-%d", year, monthOfYear+1, dayOfMonth);
+            fuelDate.setText(strDate);
         }
 
-        public void onDateSet(DatePicker view, int year, int month, int day) {
-            // Do something with the date chosen by the user
-        }
-    }
+    };
+
 }
