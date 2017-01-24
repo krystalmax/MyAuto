@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorFuel">#9BC3FF</color>
+    <color name="colorService">#FFE4E1</color>
+    <color name="colorFuelLine">#64AAFF</color>
+    <color name="colorServiceLine">#FFB0CF</color>
 </resources>
