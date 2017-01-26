@@ -17,19 +17,26 @@ import java.util.Date;
 
 public class FuelInfoActivity extends AppCompatActivity {
 
-    EditText fuelDate;
+    EditText date, distance, price, amount, quantity, shop, memo;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_fuelinfo);
 
-        fuelDate = (EditText)findViewById(R.id.fuelDate);
+        date = (EditText)findViewById(R.id.date);
+        distance = (EditText)findViewById(R.id.distance);
+        price = (EditText)findViewById(R.id.price);
+        amount = (EditText)findViewById(R.id.amount);
+        quantity = (EditText)findViewById(R.id.quantity);
+        shop = (EditText)findViewById(R.id.shop);
+        memo = (EditText)findViewById(R.id.meno);
 
+        // 최근에 입력한 주유정보 세팅 (주행거리, 주유금액, 주유단가, 주유소)
 
         // 현재날짜 세팅
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault());
         String strDate = dateFormat.format(new Date());
-        fuelDate.setText(strDate);
+        date.setText(strDate);
     }
 
 
@@ -50,7 +57,7 @@ public class FuelInfoActivity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
             String strDate = String.format("%d-%d-%d", year, monthOfYear+1, dayOfMonth);
-            fuelDate.setText(strDate);
+            date.setText(strDate);
         }
 
     };

@@ -91,7 +91,7 @@ public class DbManager extends SQLiteOpenHelper {
                 "picture    BLOB );");
 //        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + FUEL_TABLE + "(" +
 //                "_id        INTEGER PRIMARY KEY AUTOINCREMENT," +
-//                "fuelDate       INTEGER, " +
+//                "date       INTEGER, " +
 //                "distance   INTEGER, " +
 //                "cost       INTEGER, " +
 //                "price      REAL, " +
@@ -101,7 +101,7 @@ public class DbManager extends SQLiteOpenHelper {
 //                "picture    BLOB );");
 //        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + SERVICE_TABLE + "("+
 //                "_id        INTEGER PRIMARY KEY AUTOINCREMENT, " +
-//                "fuelDate       INTEGER, " +
+//                "date       INTEGER, " +
 //                "distance   INTEGER, " +
 //                "cost       INTEGER, " +
 //                "item       TEXT, " +
@@ -110,7 +110,7 @@ public class DbManager extends SQLiteOpenHelper {
 //                "picture    BLOB );");
 //        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + CHARGE_TABLE + "("+
 //                "_id        INTEGER PRIMARY KEY AUTOINCREMENT, " +
-//                "fuelDate       INTEGER, " +
+//                "date       INTEGER, " +
 //                "distance   INTEGER, " +
 //                "cost       INTEGER, " +
 //                "item       TEXT, " +

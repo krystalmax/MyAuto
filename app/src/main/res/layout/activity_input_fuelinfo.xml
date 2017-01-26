@@ -25,7 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/widget_horizontal_margin"/>
         <EditText
-            android:id="@+id/fuelDate"
+            android:id="@+id/date"
+            android:gravity="right"
             android:background="@drawable/shape_edittext_border"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +45,9 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/widget_horizontal_margin"/>
         <EditText
-            android:id="@+id/fuelDistance"
+            android:id="@+id/distance"
+            android:hint="주행거리를 입력하세요"
+            android:gravity="right"
             android:background="@drawable/shape_edittext_border"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -62,6 +65,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"/>
+        <EditText
+            android:id="@+id/amount"
+            android:background="@drawable/shape_edittext_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -76,6 +84,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"/>
+        <EditText
+            android:id="@+id/price"
+            android:background="@drawable/shape_edittext_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -90,6 +103,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"/>
+        <EditText
+            android:id="@+id/quantity"
+            android:background="@drawable/shape_edittext_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -104,6 +122,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"/>
+        <EditText
+            android:id="@+id/shop"
+            android:background="@drawable/shape_edittext_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -118,7 +141,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"/>
+        <EditText
+            android:id="@+id/meno"
+            android:background="@drawable/shape_edittext_border"
+            android:lines="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="저   장"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:id="@+id/save"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="취   소"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:id="@+id/cancel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>
